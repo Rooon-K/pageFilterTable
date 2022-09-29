@@ -111,7 +111,7 @@ export default {
   },
   created() {
     this.showData = this.tableData.slice(0, this.pageSize);
-    const filters = this.tableColumn.filter((item) => item.isShow);
+    const filters = this.tableColumn.filter((item) => item.filters);
     for (let i = 0; i < filters.length; i++) {
       this.Filter[filters[i].value] = filters[i].filterVal;
     }
