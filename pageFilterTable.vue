@@ -29,8 +29,9 @@
           <el-table-column v-for="(item, index) in isTittle" :key="index" :label="item.label" :prop="item.value"
             :filters="item.filters" :column-key="item.value">
             <template #default="scope" v-if="item.value === 'operate'">
-              <OButton :url="'/'" :subData="scope.row" :label="'提交'" :methods="'post'">
+              <OButton v-for="(item1, index1) in item.buttons" :key="index1" :url="item1.url" :subData="scope.row" :label="item1.label" :methods="item1.methods">
               </OButton>
+            </template>
             </template>
           </el-table-column>
         </el-table>
